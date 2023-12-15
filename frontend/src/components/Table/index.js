@@ -31,12 +31,12 @@ const columns = [
         selector: row => row.price,
     },
     {		
-        cell: (row) => <button onClick={() => handleDeleteButton(row)}>Deletar</button>,
+        cell: (row) => <button className={styles.deleteButton} onClick={() => handleDeleteButton(row)}>Deletar</button>,
         ignoreRowClick: false,
         button: true,
     },
     {		
-        cell: (row) => <button onClick={() => handleEditButton(row)}>Editar</button>,
+        cell: (row) => <button className={styles.editButton} onClick={() => handleEditButton(row)}>Editar</button>,
         ignoreRowClick: false,
         button: true,
     }
