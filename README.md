@@ -1,8 +1,12 @@
 ## Instalação
 
 Certifique-se de ter os seguintes programas:
-Node.js
-docker
+
+```bash
+Node.js >= v18.17.0
+Docker >= Docker version 24.0.6, build ed223bc
+Docker-compose >= Docker Compose version v2.23.0-desktop.1
+```
 
 Clone o repo: https://github.com/flityzz/crud-nunes.git
 
