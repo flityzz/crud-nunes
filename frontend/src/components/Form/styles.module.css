@@ -1,9 +1,6 @@
 .form{
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 10px;
-    width: 300px;
-    margin: 0 auto;
+    margin: 50px auto;
+    width: 100%;
 }
 
 .input {
@@ -18,7 +15,9 @@
 .button {
     width: 100%;
     padding: 10px;
-    background-color: #000;
+    background-color: #3085d6; 
+    cursor: pointer;
+    margin-top: 20px;
     color: #fff;
     border: 1px solid #ccc;
     border-radius: 3px;
