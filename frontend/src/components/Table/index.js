@@ -27,7 +27,7 @@ export default function Table() {
                     
                     setRefresh(true);
                 }).catch(error => {
-                    console.error('Erro ao excluir o produto:', error);
+                    console.error(error);
                 });
             }
         });
@@ -67,7 +67,7 @@ export default function Table() {
             api.put(`/products/${row.code}`, editedData).then(response => {
               setRefresh(true);
             }).catch(error => {
-              console.error('Erro ao editar o produto:', error);
+              console.error(error);
             });
           }
         });
@@ -109,7 +109,7 @@ export default function Table() {
                 setData(response.data);
                 setRefresh(false);
             } catch (error) {
-                console.error('Error fetching data:', error);
+                console.error(error);
             }
         };
 

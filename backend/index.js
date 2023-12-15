@@ -4,10 +4,8 @@ const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
 const app = express();
 
-//use json
 app.use(express.json());
 
-//cors
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
@@ -15,7 +13,7 @@ app.use((req, res, next) => {
   next();
 });
 
-//test api with error handling
+
 app.get('/', (req, res, next) => {
   try {
     res.status(200).json({ message: 'Success!' });
@@ -36,7 +34,7 @@ app.get('/products', async (req, res, next) => {
 
 
 app.post('/products', async (req, res, next) => {
-  
+
   try {
     const product = await prisma.product.create({
       data: {
@@ -48,7 +46,12 @@ app.post('/products', async (req, res, next) => {
     });
     res.status(201).json(product);
   } catch (err) {
-    next(err);
+    
+      if (err.code === 'P2002') {
+        res.send({message: 'There is a unique constraint violation, a new user cannot be created with this code'}).json();
+      }
+    
+    
   }
 });
 

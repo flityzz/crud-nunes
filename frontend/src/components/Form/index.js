@@ -23,10 +23,15 @@ export default function Form() {
 
     try {
         const response = await api.post(`/products`, body);
+        
+        if(response.data.message === "There is a unique constraint violation, a new user cannot be created with this code"){
+          alert("Código do produto ja utilizado, favor cadastre outro código");
+        }
+
         setRefresh(true);
         
         } catch (error) {
-        console.error('Error creating user:', error);
+        console.error(error);
     }
     
   }  
@@ -34,16 +39,16 @@ export default function Form() {
   return (
     <form className={styles.form} onSubmit={handleSubmit}>
         <label htmlFor="code">Código do produto</label>
-        <input className={styles.input} name="code" type='number' placeholder='123456..'/>
+        <input className={styles.input} name="code" type='number' placeholder='123456..' required/>
 
         <label htmlFor="name">Nome do produto</label>
-        <input className={styles.input} name="name" type='text' placeholder='produto A'/>
+        <input className={styles.input} name="name" type='text' placeholder='produto A' required/>
         
         <label htmlFor="descripition">Descrição do produto</label>
-        <input className={styles.input} name="description" type='text' placeholder='123456..'/>
+        <input className={styles.input} name="description" type='text' placeholder='123456..' required/>
 
         <label htmlFor="price">Preço do produto</label>
-        <input className={styles.input} name="price" type='number' placeholder='233'/>
+        <input className={styles.input} name="price" type='number' placeholder='233' required/>
 
         <button type="submit" className={styles.button}>Adicionar</button>
     </form>
