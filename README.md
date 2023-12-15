@@ -31,3 +31,9 @@ npm run dev
 # or
 yarn dev
 ```
+
+Para verificar o banco de dados em tempo real rode o commando na pasta backend
+
+```bash
+npx prisma studio
+```
