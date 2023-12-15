@@ -32,7 +32,6 @@ app.get('/products', async (req, res, next) => {
   }
 });
 
-
 app.post('/products', async (req, res, next) => {
 
   try {
@@ -67,7 +66,6 @@ app.put('/products/:code', async (req, res, next) => {
   }
 });
 
-
 app.delete('/products/:code', async (req, res, next) => {
   try {
     const product = await prisma.product.delete({
@@ -78,7 +76,6 @@ app.delete('/products/:code', async (req, res, next) => {
     next(err);
   }
 });
-
 
 const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
