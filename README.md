@@ -14,7 +14,7 @@ npm install
 yarn install
 ```
 
-Certifique-se que ja esteja com o docker inicializado, pois sera necessario para os proximos programas
+Certifique-se que ja esteja com o docker inicializado, pois sera para rodar o comando abaixo:
 
 ```bash
 docker compose up -d
