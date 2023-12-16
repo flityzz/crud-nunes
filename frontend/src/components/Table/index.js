@@ -123,6 +123,7 @@ export default function Table() {
             className={styles.table}
             responsive={true}
             defaultSortFieldId={1}
+            noDataComponent="Sem registros"
             keyField='code'
         />
     );

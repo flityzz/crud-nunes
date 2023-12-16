@@ -13,15 +13,25 @@ Clone o repo: https://github.com/flityzz/crud-nunes.git
 Em seguida rode esses comandos para baixar as dependências:
 
 ```bash
-npm install
+npm install (na pasta backend e frontend)
 # or
-yarn install
+yarn install (na pasta backend e frontend)
 ```
 
 Certifique-se que ja esteja com o docker inicializado, pois sera necessário para rodar o comando abaixo:
 
 ```bash
 docker compose up -d
+```
+
+IMPORTANTE: rode os comandos abaixo na pasta backend para estabelecer a conexao com o banco
+
+```bash
+npx prisma generate
+
+depois
+
+npx prisma migrate dev (cria o banco)
 ```
 
 Agora para iniciar a aplicação rode esses comandos nas pastas backend e frontend
